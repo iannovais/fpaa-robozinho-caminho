@@ -32,3 +32,18 @@ def a_star(labirinto, inicio, fim):
                         heapq.heappush(fila, (prioridade, vizinho))
                         veio_de[vizinho] = atual
     return None
+
+
+def encontrar_pontos(labirinto):
+    inicios = []
+    fins = []
+    for i, linha in enumerate(labirinto):
+        for j, valor in enumerate(linha):
+            if valor == "S":
+                inicios.append((i, j))
+            elif valor == "E":
+                fins.append((i, j))
+
+    if len(inicios) != 1 or len(fins) != 1:
+        raise ValueError("Erro: o labirinto deve conter exatamente um 'S' e um 'E'.")
+    return inicios[0], fins[0]
