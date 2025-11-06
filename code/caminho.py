@@ -47,3 +47,14 @@ def encontrar_pontos(labirinto):
     if len(inicios) != 1 or len(fins) != 1:
         raise ValueError("Erro: o labirinto deve conter exatamente um 'S' e um 'E'.")
     return inicios[0], fins[0]
+
+def destacar_caminho(labirinto, caminho):
+    lab_copia = [linha.copy() for linha in labirinto]
+    for (i, j) in caminho[1:-1]:
+        lab_copia[i][j] = "*"
+    return lab_copia
+
+def imprimir_labirinto(labirinto):
+    for linha in labirinto:
+        print(" ".join(linha))
+    print()
