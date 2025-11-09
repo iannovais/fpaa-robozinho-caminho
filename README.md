@@ -58,4 +58,48 @@ $$
 
 A cada iteração, o algoritmo escolhe o nó com o **menor valor de f(n)**, priorizando caminhos que já têm baixo custo e que aparentam estar mais próximos do destino. Esse processo continua até que o ponto **E** seja alcançado. Por fim, o programa reconstrói o caminho percorrido, marcando-o no labirinto com o símbolo `"*"` para evidenciar a rota mais curta. Dessa forma, o **PathFinder** demonstra de maneira prática como o **Algoritmo A*** combina o custo real do trajeto e a estimativa heurística para encontrar, de forma otimizada, o **menor caminho possível dentro de um labirinto**.
 
+## Exemplo de entrada e saída
+
+A seguir há um exemplo simples mostrando como o labirinto pode ser passado ao algoritmo, qual é a saída (lista de coordenadas do caminho) e como o labirinto ficaria com o caminho marcado com "*".
+
+- Representação do labirinto (S = início, E = fim, 1 = parede, 0 = espaço livre):
+
+```
+S 0 0 0 0
+1 1 0 1 0
+0 0 0 1 E
+0 1 0 0 0
+0 0 0 1 0
+```
+
+- Entrada (exemplo em formato de lista 2D que o código pode usar):
+
+```python
+labirinto = [
+	['S','0','0','0','0'],
+	['1','1','0','1','0'],
+	['0','0','0','1','E'],
+	['0','1','0','0','0'],
+	['0','0','0','1','0'],
+]
+```
+
+- Saída esperada (exemplo):
+
+1. O labirinto original impresso (mesmo que a entrada acima).
+2. Menor caminho encontrado (lista de coordenadas no formato (linha, coluna), 0-based):
+
+```
+Menor caminho: [(0,0), (0,1), (0,2), (0,3), (0,4), (1,4), (2,4)]
+```
+
+3. Labirinto com o caminho marcado com "*" (substitui células livres pelo caminho). Mantemos `S` e `E` para clareza:
+
+```
+S * * * *
+1 1 0 1 *
+0 0 0 1 E
+0 1 0 0 0
+0 0 0 1 0
+```
 
