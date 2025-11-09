@@ -14,5 +14,17 @@ A função de avaliação usada é:  f(n) = g(n) + h(n) onde o algoritmo sempre 
 
 Essa estratégia faz com que o A\* equilibre **exploração** (buscando novos caminhos) e **otimização** (mantendo o foco no destino), tornando-o muito mais eficiente do que algoritmos de busca exaustiva.
 
+## Funcionamento do Algoritmo Implementado
+
+No código desenvolvido, o **Algoritmo A*** utiliza uma **fila de prioridade (heapq)** para decidir qual posição do labirinto será analisada em seguida. Cada célula é avaliada de acordo com a soma de dois valores: o **custo real percorrido (g)** e a **heurística da distância de Manhattan (h)**, que estima o quanto falta até o destino. Durante a execução, o algoritmo inicia no ponto **S** e percorre o labirinto expandindo as posições vizinhas válidas (cima, baixo, esquerda e direita). Para cada posição, calcula-se:
+
+$$
+\boldsymbol{f(n) = g(n) + h(n)}
+$$
+
+* **g(n)** é incrementado a cada passo, representando o custo acumulado do caminho percorrido.
+* **h(n)** é obtido pela **distância de Manhattan**, somando a diferença entre as coordenadas do ponto atual e do ponto final — uma estimativa simples e eficiente para grids bidimensionais.
+
+A cada iteração, o algoritmo escolhe o nó com o **menor valor de f(n)**, priorizando caminhos que já têm baixo custo e que aparentam estar mais próximos do destino. Esse processo continua até que o ponto **E** seja alcançado. Por fim, o programa reconstrói o caminho percorrido, marcando-o no labirinto com o símbolo `"*"` para evidenciar a rota mais curta. Dessa forma, o **PathFinder** demonstra de maneira prática como o **Algoritmo A*** combina o custo real do trajeto e a estimativa heurística para encontrar, de forma otimizada, o **menor caminho possível dentro de um labirinto**.
 
 
