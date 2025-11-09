@@ -18,7 +18,7 @@ Essa estratégia faz com que o A\* equilibre **exploração** (buscando novos ca
 
 1. Clone o repositório do link: `https://github.com/iannovais/fpaa-robozinho-caminho.git`
 
-2. Depois entre na pasta necessária de copie: `cd pathfinder`
+2. Depois entre na pasta necessária de copie: `cd code`
 
 3. logo após, execute o main: `python main.py`
 
@@ -32,14 +32,17 @@ Essa estratégia faz com que o A\* equilibre **exploração** (buscando novos ca
 
 A organização do projeto foi pensada para manter o código modular e fácil de entender, separando a lógica principal da execução.
 
-PathFinder/
+```
+FPAA-ROBOZINHO-CAMINHO/
 │
 ├── code/
-│   ├── `caminho.py`            # Implementação do algoritmo A*
-│   └── `main.py`               # Script principal de execução
+│   ├── caminho.py        # Implementação do algoritmo A*
+│   └── main.py           # Script principal para execução
 │
-├── `.gitignore`                # Arquivo para ignorar cache e temporários no Git
-└── `README.md`                 # Documentação do projeto
+├── .gitignore            # Ignora arquivos temporários e cache no Git
+└── README.md             # Documentação do projeto
+```
+
 
 
 ## Funcionamento do Algoritmo Implementado
