@@ -14,6 +14,34 @@ A função de avaliação usada é:  f(n) = g(n) + h(n) onde o algoritmo sempre 
 
 Essa estratégia faz com que o A\* equilibre **exploração** (buscando novos caminhos) e **otimização** (mantendo o foco no destino), tornando-o muito mais eficiente do que algoritmos de busca exaustiva.
 
+## Como executar o projeto
+
+1. Clone o repositório do link: `https://github.com/iannovais/fpaa-robozinho-caminho.git`
+
+2. Depois entre na pasta necessária de copie: `cd pathfinder`
+
+3. logo após, execute o main: `python main.py`
+
+4. A saída esperada é: 
+- O labirinto original.
+- O menor caminho encontrado em forma de coordenadas.
+- O labirinto atualizado com o caminho marcado com "*".
+
+
+## Estrutura do projeto
+
+A organização do projeto foi pensada para manter o código modular e fácil de entender, separando a lógica principal da execução.
+
+PathFinder/
+│
+├── code/
+│   ├── `caminho.py`            # Implementação do algoritmo A*
+│   └── `main.py`               # Script principal de execução
+│
+├── `.gitignore`                # Arquivo para ignorar cache e temporários no Git
+└── `README.md`                 # Documentação do projeto
+
+
 ## Funcionamento do Algoritmo Implementado
 
 No código desenvolvido, o **Algoritmo A*** utiliza uma **fila de prioridade (heapq)** para decidir qual posição do labirinto será analisada em seguida. Cada célula é avaliada de acordo com a soma de dois valores: o **custo real percorrido (g)** e a **heurística da distância de Manhattan (h)**, que estima o quanto falta até o destino. Durante a execução, o algoritmo inicia no ponto **S** e percorre o labirinto expandindo as posições vizinhas válidas (cima, baixo, esquerda e direita). Para cada posição, calcula-se:
